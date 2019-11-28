@@ -63,16 +63,18 @@ conn.login(cred.username, cred.password, (err, res) => {
                   contactId: contact.Id,
                   contactName: contact.Name
                 };
+
                 fs.readFile(p, (err, fileContent) => {
                   const jsonData = JSON.parse(fileContent);
-                  if (Object.is(jsonData, data)) {
-                    fs.writeFile(p, JSON.stringify(data), err => {
-                      if (err) {
-                        console.log('ERROR 5 => ', err);
-                      }
-                    });
-                  } else {
-                    return;
+
+                  for (const prop in jsonData) {
+                    if (jsonData[prop] !== data[prop]) {
+                      fs.writeFile(p, JSON.stringify(data), err => {
+                        if (err) {
+                          console.log('ERROR 5 => ', err);
+                        }
+                      });
+                    }
                   }
                 });
               }
