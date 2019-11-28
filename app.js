@@ -60,7 +60,7 @@ conn.login(cred.username, cred.password, (err, res) => {
                 // Même opération, j'enregistre le contact dans une variable
                 const contact = res.records[0];
 
-                // Ensuite j'enregistre Id et Name de l'account + opportunité + contact dans un tableau
+                // Ensuite j'enregistre Id et Name de l'account + opportunité + contact dans un objet
                 const data = {
                   accountId: account.Id,
                   accountName: account.Name,
