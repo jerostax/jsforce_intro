@@ -1,0 +1,18 @@
+{
+  "name": "jsforce_getting_started",
+  "version": "1.0.0",
+  "description": "getting started with jsforce",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Jérémy Geneste",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsforce": "^1.9.3",
+    "nodemon": "^2.0.1"
+  }
+}
